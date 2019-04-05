@@ -20,9 +20,27 @@ function convertHTML(str) {
 }
   
 
-console.log(convertHTML("Dolce & Gabbana"));
-console.log(convertHTML("Hamburgers < Pizza < Tacos"));
-console.log(convertHTML("Sixty > twelve"));
-console.log(convertHTML('Stuff in "quotation marks"'));
-console.log(convertHTML("Schindler's List"));
-console.log(convertHTML("<>"));
+
+
+
+function convertHTML1(str) {
+// Use Object Lookup to declare as many HTML entities as needed.
+    htmlEntities={
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        '\'':"&apos;"
+    };
+    //Use map function to return a filtered str with all entities changed automatically.
+    return str.split('').map(entity => htmlEntities[entity] || entity).join('');
+}
+
+// test here
+convertHTML1("Dolce & Gabbana");
+console.log(convertHTML1("Dolce & Gabbana"));
+console.log(convertHTML1("Hamburgers < Pizza < Tacos"));
+console.log(convertHTML1("Sixty > twelve"));
+console.log(convertHTML1('Stuff in "quotation marks"'));
+console.log(convertHTML1("Schindler's List"));
+console.log(convertHTML1("<>"));
