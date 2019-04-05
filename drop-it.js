@@ -4,7 +4,7 @@ function dropElements(arr, func) {
         return arr.slice(i);
       }
     }
-    return arr;
+    return [];
 }
 
 console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}));  
